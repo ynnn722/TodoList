@@ -1,0 +1,19 @@
+<section class="mx-auto flex w-full max-w-3xl flex-col gap-4">
+  <mat-card class="p-4">
+    <h1 class="mb-4 text-xl font-semibold">Todo List</h1>
+    <app-todo-create-form (create)="createTodo($event)"></app-todo-create-form>
+  </mat-card>
+
+  <mat-card class="flex items-center justify-between gap-2 p-4">
+    <app-todo-filter-bar [selected]="selectedFilter()" (selectedChange)="setFilter($event)"></app-todo-filter-bar>
+    <div class="text-sm text-slate-600">
+      전체 {{ stats().total }} / 진행 {{ stats().active }} / 완료 {{ stats().completed }}
+    </div>
+  </mat-card>
+
+  @if (loading()) {
+    <mat-card class="p-4 text-sm text-slate-500">데이터를 불러오는 중입니다...</mat-card>
+  }
+
+  <app-todo-list [items]="filteredTodos()" (toggle)="toggleTodo($event)" (remove)="removeTodo($event)"></app-todo-list>
+</section>
