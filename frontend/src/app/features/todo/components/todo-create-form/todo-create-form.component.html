@@ -1,0 +1,12 @@
+<form class="flex flex-col gap-3 sm:flex-row sm:items-start" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field class="w-full">
+    <mat-label>할 일</mat-label>
+    <input matInput formControlName="title" placeholder="새로운 할 일을 입력하세요" />
+    @if (title.invalid && title.touched) {
+      <mat-error>1~120자 이내로 입력해 주세요.</mat-error>
+    }
+  </mat-form-field>
+  <button mat-flat-button color="primary" type="submit" [disabled]="title.invalid || submitting()">
+    <mat-icon>add</mat-icon>
+  </button>
+</form>

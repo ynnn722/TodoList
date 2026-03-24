@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-2">
+  @for (todo of items; track todo.id) {
+    <app-todo-item [todo]="todo" (toggle)="toggle.emit($event)" (remove)="remove.emit($event)" />
+  } @empty {
+    <div class="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center text-sm text-slate-500">
+      표시할 할 일이 없습니다.
+    </div>
+  }
+</div>
