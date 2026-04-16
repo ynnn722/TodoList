@@ -7,7 +7,7 @@ using TodoList.Features.Todos.Contracts;
 namespace TodoList.Features.Todos;
 
 [ApiController]
-[Route("todos")]
+[Route("api/[controller]")] // api/todos
 public class TodosController : ControllerBase
 {
     private readonly AppDbContext _dbContext;
