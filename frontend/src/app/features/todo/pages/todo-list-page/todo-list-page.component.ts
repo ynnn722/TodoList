@@ -4,7 +4,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TodoCreateFormComponent } from '../../components/todo-create-form/todo-create-form.component';
 import { TodoFilterBarComponent } from '../../components/todo-filter-bar/todo-filter-bar.component';
 import { TodoListComponent } from '../../components/todo-list/todo-list.component';
-import { TodoFilter } from '../../models/todo.model';
+import { TodoFilter } from '../../todo.types';
 import { TodoFacade } from '../../state/todo.facade';
 
 @Component({

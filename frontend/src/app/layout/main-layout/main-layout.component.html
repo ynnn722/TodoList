@@ -4,9 +4,14 @@
       <mat-icon>check_circle</mat-icon>
       <span class="font-medium">TodoList</span>
     </div>
-    <button mat-icon-button aria-label="theme-toggle (placeholder)">
-      <mat-icon>dark_mode</mat-icon>
-    </button>
+    <div class="flex items-center gap-1">
+      <button mat-icon-button aria-label="theme-toggle (placeholder)">
+        <mat-icon>dark_mode</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="logout" matTooltip="로그아웃" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
   </div>
 </mat-toolbar>
 

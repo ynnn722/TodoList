@@ -2,16 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { environment } from '../../../../environments/environment';
-import { Todo } from '../models/todo.model';
-
-export interface CreateTodoRequestDto {
-  title: string;
-}
-
-export interface UpdateTodoRequestDto {
-  title?: string;
-  isCompleted?: boolean;
-}
+import { CreateTodoRequest, Todo, UpdateTodoRequest } from '../todo.types';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +25,7 @@ export class TodoApiService {
     return this.http.get<Todo[]>(this.endpoint);
   }
 
-  createTodo(request: CreateTodoRequestDto): Observable<Todo> {
+  createTodo(request: CreateTodoRequest): Observable<Todo> {
     if (environment.useMockApi) {
       const next: Todo = {
         id: Date.now(),
@@ -48,7 +39,7 @@ export class TodoApiService {
     return this.http.post<Todo>(this.endpoint, request);
   }
 
-  updateTodo(id: number, request: UpdateTodoRequestDto): Observable<Todo> {
+  updateTodo(id: number, request: UpdateTodoRequest): Observable<Todo> {
     if (environment.useMockApi) {
       const index = this.mockTodos.findIndex((todo) => todo.id === id);
       if (index < 0) {
