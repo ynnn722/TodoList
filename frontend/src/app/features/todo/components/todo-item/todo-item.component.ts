@@ -3,7 +3,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DatePipe } from '@angular/common';
-import { Todo } from '../../models/todo.model';
+import { Todo } from '../../todo.types';
 
 @Component({
   selector: 'app-todo-item',

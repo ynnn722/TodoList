@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { TodoFilter } from '../../models/todo.model';
+import { TodoFilter } from '../../todo.types';
 
 @Component({
   selector: 'app-todo-filter-bar',
