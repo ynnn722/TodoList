@@ -27,7 +27,7 @@ public class TodosController : ControllerBase
                 Id = x.Id,
                 Title = x.Title,
                 IsCompleted = x.IsCompleted,
-                CreatedAt = x.CreatedAt
+                CreatedAt = DateTime.SpecifyKind(x.CreatedAt, DateTimeKind.Utc)
             })
             .ToListAsync();
 
@@ -64,7 +64,7 @@ public class TodosController : ControllerBase
             Id = todo.Id,
             Title = todo.Title,
             IsCompleted = todo.IsCompleted,
-            CreatedAt = todo.CreatedAt
+            CreatedAt = DateTime.SpecifyKind(todo.CreatedAt, DateTimeKind.Utc)
         };
 
         return Ok(response);
@@ -109,7 +109,7 @@ public class TodosController : ControllerBase
             Id = todo.Id,
             Title = todo.Title,
             IsCompleted = todo.IsCompleted,
-            CreatedAt = todo.CreatedAt
+            CreatedAt = DateTime.SpecifyKind(todo.CreatedAt, DateTimeKind.Utc)
         };
 
         return Ok(response);

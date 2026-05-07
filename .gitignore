@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# SQLite databases (local dev)
+*.db
+*.db-shm
+*.db-wal
+
+# VS Code workspace
+.vscode/
+
+# Local-only config (may contain secrets)
+TodoList/appsettings.Development.json

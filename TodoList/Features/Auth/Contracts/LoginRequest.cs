@@ -1,0 +1,8 @@
+namespace TodoList.Features.Auth.Contracts;
+
+public sealed class LoginRequest
+{
+    public string UserId { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+}
+
